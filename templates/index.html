@@ -1,0 +1,489 @@
+{% extends "base.html" %}
+
+{% block title %}WeblanceX AI — Build Fast. Automate Everything.{% endblock %}
+
+{# ── NAV ─────────────────────────────────────────────────────────────────── #}
+{% block nav %}
+<div class="hidden sm:flex items-center gap-6">
+    <a href="#services"  class="text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-100 transition-colors">Services</a>
+    <a href="#work"      class="text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-100 transition-colors">Work</a>
+    <a href="#pricing"   class="text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-100 transition-colors">Pricing</a>
+    <a href="#contact"   class="text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-100 transition-colors">Contact</a>
+    <a href="#contact"   class="text-xs uppercase tracking-widest border border-green-500 text-green-400 px-4 py-2 hover:bg-green-500 hover:text-black transition-colors">
+        Get Started
+    </a>
+</div>
+{# Mobile: hamburger toggle #}
+<div class="sm:hidden" x-data="{ open: false }">
+    <button @click="open = !open" class="text-neutral-400 hover:text-neutral-100 text-xs uppercase tracking-widest border border-neutral-700 px-3 py-2">
+        Menu
+    </button>
+    <div x-show="open" x-transition
+         class="absolute top-full left-0 right-0 bg-neutral-950 border-b border-neutral-800 px-6 py-4 z-50 flex flex-col gap-4">
+        <a href="#services" @click="open=false" class="text-xs uppercase tracking-widest text-neutral-400">Services</a>
+        <a href="#work"     @click="open=false" class="text-xs uppercase tracking-widest text-neutral-400">Work</a>
+        <a href="#pricing"  @click="open=false" class="text-xs uppercase tracking-widest text-neutral-400">Pricing</a>
+        <a href="#contact"  @click="open=false" class="text-xs uppercase tracking-widest text-neutral-400">Contact</a>
+    </div>
+</div>
+{% endblock %}
+
+{# ── MAIN CONTENT ─────────────────────────────────────────────────────────── #}
+{% block content %}
+
+{# ═══════════════════════════════════════════════════════════════════════════
+   SECTION 1: HERO
+   Purpose: Maximum clarity above the fold. One headline, one sub, two CTAs.
+   Conversion role: Communicate value prop instantly. Drive to #contact or #work.
+   Brutalist rule: No image, no animation. Signal > decoration.
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<section id="hero" class="py-20 lg:py-32 border-b border-neutral-800">
+    <div class="max-w-4xl">
+
+        {# Status bar — terminal-inspired credibility signal #}
+        <div class="flex items-center gap-2 mb-8 text-xs font-mono text-green-400">
+            <span class="w-1.5 h-1.5 bg-green-400 inline-block animate-pulse"></span>
+            <span>WEBLANCEX AI // SYSTEMS OPERATIONAL</span>
+        </div>
+
+        {# Primary headline — tagline is the headline #}
+        <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-neutral-100 leading-none mb-6">
+            Build Fast.<br>Automate<br>Everything.
+        </h1>
+
+        {# Sub-headline — expands on who we are #}
+        <p class="text-neutral-400 text-lg leading-relaxed mb-10 max-w-xl">
+            AI-powered web development. We scope, build, and ship production-ready
+            software—without the bloat, the BS, or blown timelines.
+        </p>
+
+        {# Dual CTA: primary action + secondary browse #}
+        <div class="flex flex-wrap gap-4">
+            <a href="#contact"
+               class="text-sm uppercase tracking-widest bg-green-500 text-black font-bold px-8 py-4 hover:bg-green-400 transition-colors">
+                Start Your Project
+            </a>
+            <a href="#work"
+               class="text-sm uppercase tracking-widest border border-neutral-700 text-neutral-300 px-8 py-4 hover:border-neutral-400 transition-colors">
+                See Our Work →
+            </a>
+        </div>
+
+        {# Quick-stats strip — proof without a full section #}
+        <div class="mt-16 pt-8 border-t border-neutral-800 grid grid-cols-3 gap-8">
+            <div>
+                <div class="text-2xl font-bold text-neutral-100 font-mono">48h</div>
+                <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">First delivery</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-neutral-100 font-mono">50+</div>
+                <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Projects shipped</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-neutral-100 font-mono">0</div>
+                <div class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Missed deadlines</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════════════════
+   SECTION 2: SERVICES
+   Purpose: Explain exactly what we do. Three clear lanes.
+   Conversion role: Match visitor's need to our capability.
+   Brutalist rule: Grid with gap-px dividers, no icons, color = category signal.
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<section id="services" class="py-20 border-b border-neutral-800">
+
+    <div class="mb-12">
+        <div class="text-xs text-blue-400 uppercase tracking-widest font-mono mb-2">01 // What We Build</div>
+        <h2 class="text-3xl font-bold text-neutral-100">Services</h2>
+    </div>
+
+    {# gap-px + bg-neutral-800 = hairline dividers between cards — no borders needed #}
+    <div class="grid gap-px bg-neutral-800 border border-neutral-800 sm:grid-cols-2 lg:grid-cols-3">
+
+        {# Service: Web Development #}
+        <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+            <div class="text-xs text-green-400 uppercase tracking-widest font-mono mb-4">Web Development</div>
+            <h3 class="text-xl font-bold text-neutral-100 mb-3">Fast, modern websites</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                Landing pages to full-stack apps. Clean HTML, Tailwind, HTMX—
+                no JS frameworks, no build step, no unnecessary complexity.
+            </p>
+            <div class="text-xs text-neutral-600 font-mono pt-4 border-t border-neutral-800">
+                Flask · Tailwind · HTMX · Alpine.js
+            </div>
+        </div>
+
+        {# Service: Automation #}
+        <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+            <div class="text-xs text-blue-400 uppercase tracking-widest font-mono mb-4">Automation</div>
+            <h3 class="text-xl font-bold text-neutral-100 mb-3">Eliminate the busywork</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                Workflows, pipelines, integrations. We automate the repetitive
+                so your team can focus on what matters.
+            </p>
+            <div class="text-xs text-neutral-600 font-mono pt-4 border-t border-neutral-800">
+                Python · APIs · Webhooks · Cron
+            </div>
+        </div>
+
+        {# Service: AI Integration #}
+        <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+            <div class="text-xs text-amber-400 uppercase tracking-widest font-mono mb-4">AI Integration</div>
+            <h3 class="text-xl font-bold text-neutral-100 mb-3">Make your product smarter</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                LLMs, agents, and AI-first features built into your stack.
+                Not demos—production-ready systems.
+            </p>
+            <div class="text-xs text-neutral-600 font-mono pt-4 border-t border-neutral-800">
+                Claude · OpenAI · LangChain · RAG
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════════════════
+   SECTION 3: WORK / PORTFOLIO
+   Purpose: Show real outcomes. Four project cards in a 2-col grid.
+   Conversion role: Validate capability. Last card is "Your project" CTA.
+   Brutalist rule: Monospace dates, tech stack as footer, no screenshots.
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<section id="work" class="py-20 border-b border-neutral-800">
+
+    <div class="mb-12">
+        <div class="text-xs text-blue-400 uppercase tracking-widest font-mono mb-2">02 // Selected Projects</div>
+        <h2 class="text-3xl font-bold text-neutral-100">Work</h2>
+    </div>
+
+    <div class="grid gap-px bg-neutral-800 border border-neutral-800 sm:grid-cols-2">
+
+        {# Project 1 #}
+        <div class="bg-neutral-950 p-8">
+            <div class="flex justify-between items-start mb-6">
+                <div class="text-xs text-green-400 font-mono uppercase tracking-widest">SaaS Dashboard</div>
+                <div class="text-xs text-neutral-600 font-mono">2026</div>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-100 mb-3">Analytics Platform</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                Real-time dashboard for a B2B analytics startup. HTMX-powered
+                live updates—no WebSocket complexity, no React dependency.
+            </p>
+            <div class="text-xs text-neutral-600 font-mono pt-4 border-t border-neutral-800">
+                Flask · Tailwind · HTMX · PostgreSQL
+            </div>
+        </div>
+
+        {# Project 2 #}
+        <div class="bg-neutral-950 p-8">
+            <div class="flex justify-between items-start mb-6">
+                <div class="text-xs text-blue-400 font-mono uppercase tracking-widest">AI Tool</div>
+                <div class="text-xs text-neutral-600 font-mono">2026</div>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-100 mb-3">Document Automation</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                LLM-powered document processing pipeline. Reduced manual
+                review time by 80%. Handles 10k+ docs per day.
+            </p>
+            <div class="text-xs text-neutral-600 font-mono pt-4 border-t border-neutral-800">
+                Python · Claude API · FastAPI · Redis
+            </div>
+        </div>
+
+        {# Project 3 #}
+        <div class="bg-neutral-950 p-8">
+            <div class="flex justify-between items-start mb-6">
+                <div class="text-xs text-amber-400 font-mono uppercase tracking-widest">Automation</div>
+                <div class="text-xs text-neutral-600 font-mono">2025</div>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-100 mb-3">E-commerce Sync Engine</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                Multi-channel inventory sync across 5 platforms. Zero manual
+                updates. 99.9% accuracy across 50k+ SKUs.
+            </p>
+            <div class="text-xs text-neutral-600 font-mono pt-4 border-t border-neutral-800">
+                Python · Webhooks · PostgreSQL · Celery
+            </div>
+        </div>
+
+        {# Placeholder / CTA card #}
+        <div class="bg-neutral-900 p-8 flex items-center justify-center border-dashed border border-neutral-700">
+            <div class="text-center">
+                <div class="text-xs text-neutral-600 uppercase tracking-widest font-mono mb-4">Next Project</div>
+                <a href="#contact"
+                   class="text-sm text-green-400 hover:text-green-300 transition-colors">
+                    Let's build it →
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════════════════
+   SECTION 4: SOCIAL PROOF
+   Purpose: Credibility via numbers + raw testimonial text.
+   Conversion role: Overcome doubt before the pricing ask.
+   Brutalist rule: No stars, no avatars. Numbers large; quotes plain.
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<section id="proof" class="py-20 border-b border-neutral-800">
+
+    <div class="mb-12">
+        <div class="text-xs text-blue-400 uppercase tracking-widest font-mono mb-2">03 // Results</div>
+        <h2 class="text-3xl font-bold text-neutral-100">Proof</h2>
+    </div>
+
+    {# Metrics bar #}
+    <div class="grid grid-cols-2 lg:grid-cols-4 border border-neutral-800 mb-12">
+        <div class="p-8 border-r border-neutral-800">
+            <div class="text-4xl font-bold text-green-400 font-mono mb-2">48h</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest">Avg first delivery</div>
+        </div>
+        <div class="p-8 border-r border-neutral-800">
+            <div class="text-4xl font-bold text-green-400 font-mono mb-2">50+</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest">Projects shipped</div>
+        </div>
+        <div class="p-8 border-r border-neutral-800">
+            <div class="text-4xl font-bold text-green-400 font-mono mb-2">3×</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest">Faster than agencies</div>
+        </div>
+        <div class="p-8">
+            <div class="text-4xl font-bold text-green-400 font-mono mb-2">0</div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest">Missed deadlines</div>
+        </div>
+    </div>
+
+    {# Testimonials #}
+    <div class="grid gap-px bg-neutral-800 border border-neutral-800 sm:grid-cols-2 lg:grid-cols-3">
+
+        <blockquote class="bg-neutral-950 p-8">
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+                "They delivered a production-ready SaaS dashboard in under a week.
+                No fluff, just code. Exactly what we needed."
+            </p>
+            <footer class="text-xs text-neutral-600 font-mono">
+                — Founder, B2B SaaS
+            </footer>
+        </blockquote>
+
+        <blockquote class="bg-neutral-950 p-8">
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+                "The automation pipeline they built eliminated 20 hours of weekly
+                manual work. ROI was immediate."
+            </p>
+            <footer class="text-xs text-neutral-600 font-mono">
+                — Operations Lead, E-commerce
+            </footer>
+        </blockquote>
+
+        <blockquote class="bg-neutral-950 p-8">
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+                "Fast, honest communication. They said 3 days and delivered in 2.
+                Rare to find that combination."
+            </p>
+            <footer class="text-xs text-neutral-600 font-mono">
+                — CTO, Fintech Startup
+            </footer>
+        </blockquote>
+
+    </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════════════════
+   SECTION 5: PRICING
+   Purpose: Transparent tiers. Reduce "how much does it cost?" friction.
+   Conversion role: Self-qualify visitors, push them to #contact CTA.
+   Brutalist rule: Pro tier bordered in green (signal, not decoration).
+                   No feature tables—bullet lists only.
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<section id="pricing" class="py-20 border-b border-neutral-800">
+
+    <div class="mb-12">
+        <div class="text-xs text-blue-400 uppercase tracking-widest font-mono mb-2">04 // Transparent Pricing</div>
+        <h2 class="text-3xl font-bold text-neutral-100">Pricing</h2>
+    </div>
+
+    <div class="grid gap-px bg-neutral-800 border border-neutral-800 sm:grid-cols-3">
+
+        {# Tier 1: Starter #}
+        <div class="bg-neutral-950 p-8">
+            <div class="text-xs text-neutral-500 uppercase tracking-widest font-mono mb-2">Starter</div>
+            <div class="text-3xl font-bold text-neutral-100 font-mono mb-1">$999</div>
+            <div class="text-xs text-neutral-600 font-mono mb-8">one-time</div>
+            <ul class="text-sm text-neutral-400 space-y-3 mb-8">
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> 1-page landing site</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Mobile-first responsive</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Contact form</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Deployed & live in 48h</li>
+                <li class="flex gap-3"><span class="text-neutral-700 shrink-0">✗</span> Custom backend</li>
+                <li class="flex gap-3"><span class="text-neutral-700 shrink-0">✗</span> AI features</li>
+            </ul>
+            <a href="#contact"
+               class="block text-xs text-center uppercase tracking-widest border border-neutral-700 px-6 py-3 hover:border-neutral-400 text-neutral-300 transition-colors">
+                Get Started
+            </a>
+        </div>
+
+        {# Tier 2: Professional (recommended) — green border = featured signal #}
+        <div class="bg-neutral-950 p-8 ring-1 ring-green-500 ring-inset">
+            <div class="flex items-center justify-between mb-2">
+                <div class="text-xs text-green-400 uppercase tracking-widest font-mono">Professional</div>
+                <div class="text-xs text-green-400 font-mono border border-green-800 px-2 py-0.5">Popular</div>
+            </div>
+            <div class="text-3xl font-bold text-neutral-100 font-mono mb-1">$3,500</div>
+            <div class="text-xs text-neutral-600 font-mono mb-8">per project</div>
+            <ul class="text-sm text-neutral-400 space-y-3 mb-8">
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Multi-page app or site</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Custom Flask backend</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Database + auth</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> HTMX interactions</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Delivered in 2 weeks</li>
+                <li class="flex gap-3"><span class="text-neutral-700 shrink-0">✗</span> AI / LLM features</li>
+            </ul>
+            <a href="#contact"
+               class="block text-xs text-center uppercase tracking-widest bg-green-500 text-black font-bold px-6 py-3 hover:bg-green-400 transition-colors">
+                Get Started
+            </a>
+        </div>
+
+        {# Tier 3: AI / Custom #}
+        <div class="bg-neutral-950 p-8">
+            <div class="text-xs text-amber-400 uppercase tracking-widest font-mono mb-2">AI / Custom</div>
+            <div class="text-3xl font-bold text-neutral-100 font-mono mb-1">Custom</div>
+            <div class="text-xs text-neutral-600 font-mono mb-8">scoped to your project</div>
+            <ul class="text-sm text-neutral-400 space-y-3 mb-8">
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Everything in Pro</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> LLM / AI integration</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Automation pipelines</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Agent-based systems</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Retainer option</li>
+                <li class="flex gap-3"><span class="text-green-400 shrink-0">✓</span> Dedicated dev</li>
+            </ul>
+            <a href="#contact"
+               class="block text-xs text-center uppercase tracking-widest border border-neutral-700 px-6 py-3 hover:border-neutral-400 text-neutral-300 transition-colors">
+                Talk to Us
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════════════════
+   SECTION 6: CONTACT / CTA
+   Purpose: Convert. Collect brief, not a long intake form.
+   Conversion role: Terminal conversion point. 3-step process left, form right.
+   Brutalist rule: HTMX form submit — no page reload, no JS. Green = action.
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<section id="contact" class="py-20">
+
+    <div class="grid lg:grid-cols-2 gap-16">
+
+        {# Left: Value messaging + process steps #}
+        <div>
+            <div class="text-xs text-blue-400 uppercase tracking-widest font-mono mb-2">05 // Get In Touch</div>
+            <h2 class="text-3xl font-bold text-neutral-100 mb-6">Start Your Project</h2>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-10 max-w-sm">
+                Tell us what you're building. We respond within 24 hours with
+                a scope, timeline, and flat-rate quote — no sales call required.
+            </p>
+
+            {# Process steps — numbered like terminal output #}
+            <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                    <span class="text-xs text-neutral-600 font-mono w-6 shrink-0 mt-0.5">01</span>
+                    <div>
+                        <div class="text-sm font-bold text-neutral-100 mb-1">You send a brief</div>
+                        <div class="text-xs text-neutral-500">What you need, roughly what it should do</div>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="text-xs text-neutral-600 font-mono w-6 shrink-0 mt-0.5">02</span>
+                    <div>
+                        <div class="text-sm font-bold text-neutral-100 mb-1">We scope in 24h</div>
+                        <div class="text-xs text-neutral-500">Timeline, deliverables, flat-rate quote</div>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="text-xs text-neutral-600 font-mono w-6 shrink-0 mt-0.5">03</span>
+                    <div>
+                        <div class="text-sm font-bold text-neutral-100 mb-1">We build and ship</div>
+                        <div class="text-xs text-neutral-500">First working version in 48h – 2 weeks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Right: Contact form (HTMX — server returns HTML fragment on submit) #}
+        <div>
+            <div id="contact-form-wrap">
+                <form
+                    hx-post="/contact"
+                    hx-target="#contact-form-wrap"
+                    hx-swap="innerHTML"
+                    class="space-y-5"
+                >
+                    <div>
+                        <label class="block text-xs text-neutral-500 uppercase tracking-widest font-mono mb-2">
+                            Name
+                        </label>
+                        <input
+                            type="text" name="name" required
+                            placeholder="Your name"
+                            class="w-full bg-neutral-900 border border-neutral-700 text-neutral-100 text-sm px-4 py-3 font-mono focus:outline-none focus:border-green-500 transition-colors placeholder:text-neutral-700"
+                        >
+                    </div>
+                    <div>
+                        <label class="block text-xs text-neutral-500 uppercase tracking-widest font-mono mb-2">
+                            Email
+                        </label>
+                        <input
+                            type="email" name="email" required
+                            placeholder="you@company.com"
+                            class="w-full bg-neutral-900 border border-neutral-700 text-neutral-100 text-sm px-4 py-3 font-mono focus:outline-none focus:border-green-500 transition-colors placeholder:text-neutral-700"
+                        >
+                    </div>
+                    <div>
+                        <label class="block text-xs text-neutral-500 uppercase tracking-widest font-mono mb-2">
+                            What are you building?
+                        </label>
+                        <textarea
+                            name="message" required rows="4"
+                            placeholder="Describe your project — what it does, who uses it, rough timeline..."
+                            class="w-full bg-neutral-900 border border-neutral-700 text-neutral-100 text-sm px-4 py-3 font-mono focus:outline-none focus:border-green-500 transition-colors resize-none placeholder:text-neutral-700"
+                        ></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-neutral-500 uppercase tracking-widest font-mono mb-2">
+                            Budget range
+                        </label>
+                        <select
+                            name="budget"
+                            class="w-full bg-neutral-900 border border-neutral-700 text-neutral-100 text-sm px-4 py-3 font-mono focus:outline-none focus:border-green-500 transition-colors"
+                        >
+                            <option value="">— Select a range —</option>
+                            <option value="starter">Under $1,500</option>
+                            <option value="pro">$1,500 – $5,000</option>
+                            <option value="enterprise">$5,000+</option>
+                        </select>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full text-sm uppercase tracking-widest bg-green-500 text-black font-bold px-8 py-4 hover:bg-green-400 transition-colors"
+                    >
+                        Send Brief →
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

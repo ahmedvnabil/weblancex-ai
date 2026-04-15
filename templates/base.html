@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WeblanceX{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- HTMX -->
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2/dist/htmx.min.js"></script>
+
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" defer></script>
+
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-mono antialiased min-h-screen">
+    <header class="border-b border-neutral-800 px-6 py-4">
+        <nav class="flex items-center justify-between max-w-6xl mx-auto">
+            <a href="/" class="text-sm font-bold tracking-widest uppercase text-neutral-100">
+                {% block brand %}WeblanceX{% endblock %}
+            </a>
+            {% block nav %}{% endblock %}
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-neutral-800 px-6 py-4 mt-auto">
+        <div class="max-w-6xl mx-auto text-xs text-neutral-600">
+            {% block footer %}&copy; {{ year|default('2026') }} WeblanceX AI{% endblock %}
+        </div>
+    </footer>
+</body>
+</html>

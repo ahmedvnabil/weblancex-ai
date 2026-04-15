@@ -1,0 +1,13 @@
+{# HTMX fragment — shown on validation failure #}
+<div class="border border-red-500 p-8 text-center">
+    <div class="flex items-center justify-center gap-2 mb-4 text-xs font-mono text-red-400">
+        <span class="w-1.5 h-1.5 bg-red-400 inline-block"></span>
+        <span>SUBMISSION ERROR</span>
+    </div>
+    <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+        {{ error }}
+    </p>
+    <a href="#contact" class="text-xs uppercase tracking-widest border border-neutral-700 text-neutral-300 px-6 py-3 hover:border-neutral-400 transition-colors">
+        Try Again
+    </a>
+</div>
